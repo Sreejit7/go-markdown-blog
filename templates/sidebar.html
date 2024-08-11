@@ -1,0 +1,17 @@
+<aside class="sidebar left-sidebar">
+    <!-- <a href="/">
+        <img src="/static/images/yourlogo.webp" alt="Your Logo" />
+    </a> -->
+
+    <nav>
+        {{ range .Categories }}
+        <ul>
+            {{ range .Pages }}
+            <li class="{{ if eq .Slug $.CurrentSlug }}active{{ end }}">
+                <a href="/{{ .Slug }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </nav>
+</aside>
